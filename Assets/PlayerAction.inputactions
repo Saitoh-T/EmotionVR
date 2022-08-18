@@ -1,0 +1,134 @@
+{
+    "name": "PlayerAction",
+    "maps": [
+        {
+            "name": "PlayerAction",
+            "id": "63a7774e-77a8-41c0-b064-9f2eb9fad0df",
+            "actions": [
+                {
+                    "name": "LeftAction",
+                    "type": "Value",
+                    "id": "c1f6a18a-bf2b-496f-aa61-84b7972e2ac4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightAction",
+                    "type": "Button",
+                    "id": "fba19773-bdf9-4d9e-a810-ba532e6f24d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftHaptic",
+                    "type": "Value",
+                    "id": "1a4d29eb-04b2-4918-b953-3ce9725ab53d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightHaptic",
+                    "type": "Value",
+                    "id": "49ae0177-28dc-4ac7-9539-2dfa715d2419",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "AButton",
+                    "type": "Button",
+                    "id": "43f66aa7-f559-4665-9ee9-c86eb70ecd7c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MoveSounds",
+                    "type": "Value",
+                    "id": "d65b0b90-37ed-4724-8876-37ee0efe3fb9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "90670c10-088d-4420-aa02-8176a0099b01",
+                    "path": "<XRController>{LeftHand}/gripPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "480c5d5d-320f-4c67-b8d1-d7447e1a35ab",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fea85ffc-4879-4758-b8b2-03b379973a2e",
+                    "path": "<XRController>{LeftHand}/*",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81b4c37a-915e-4f50-82e1-7c49f823db7a",
+                    "path": "<XRController>{RightHand}/*",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHaptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf1cbbe7-7439-4256-a3d9-86cb4bbc2a03",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53235693-3453-4836-9ce1-853869b70648",
+                    "path": "<XRController>{LeftHand}/primary2DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveSounds",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

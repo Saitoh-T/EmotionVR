@@ -50,7 +50,7 @@ public class InputActionMap : MonoBehaviour
             rumbleController.SendImpulse(0.9f, 0.25f);
         }
 
-        StartCoroutine(Period());
+        StartCoroutine(Fire());
     }
 
     private void OnAButton(InputValue arg) 
@@ -97,7 +97,7 @@ public class InputActionMap : MonoBehaviour
         }
     }
 
-    private IEnumerator Period() 
+    private IEnumerator Fire() 
     {
         fire = true;
         yield return new WaitForSeconds(1.0f);

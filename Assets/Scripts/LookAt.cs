@@ -12,7 +12,7 @@ using UnityEngine;
 
         float step = 0;
         //向くスピード(秒速)
-        float speed = 0.1f;
+        float speed = 5f;
 
         void Start()
         {

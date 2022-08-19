@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorSounds : MonoBehaviour
+public class Sounds : MonoBehaviour
 {
-    [SerializeField] AudioSource _doorSounds; 
-    [SerializeField] AudioSource _knockSounds; 
+    [SerializeField] AudioSource _Sounds; 
+    [SerializeField] AudioSource _RandomSounds; 
 
-    public void doorSound()
+    public void Sound()
     {
-        _doorSounds.Play();
+        _Sounds.Play();
     }
 
-    public void knockSound() 
+    public void RandomSound() 
     {
-        _knockSounds.pitch=Random.Range(0.8f, 1.2f);
-        _knockSounds.Play();
+        _RandomSounds.pitch=Random.Range(0.5f, 1.5f);
+        _RandomSounds.Play();
     }
 
 }

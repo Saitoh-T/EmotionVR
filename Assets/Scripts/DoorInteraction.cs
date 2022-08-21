@@ -29,7 +29,7 @@ public class DoorInteraction : MonoBehaviour
 
     private void Rotation() 
     {
-            animator.SetTrigger("Open");
+            animator.SetTrigger("Fire");
     }
 
 }

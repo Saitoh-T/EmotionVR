@@ -25,12 +25,17 @@ public class StartStaring : MonoBehaviour
 
     IEnumerator StopPlayer() 
     {
-        Transform startPosition=_player.transform;
-        GameObject target=_Dolls;
+        Transform target=_Dolls.transform;
         var _controller = _player.GetComponent<ActionBasedContinuousMoveProvider>();
+
         _controller.enabled = false;
-        transform.rotation = Quaternion.Slerp(startPosition.rotation, Quaternion.LookRotation((target.transform.position - startPosition.position).normalized), 1);
+        
+        _player.transform.LookAt(target);
+        
         yield return new WaitForSeconds(1.0f);
+        
         _controller.enabled = true;
+
+        _player.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 }

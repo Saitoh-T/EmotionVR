@@ -36,6 +36,7 @@ public class StartStaring : MonoBehaviour
         
         _controller.enabled = true;
 
-        _player.transform.eulerAngles = new Vector3(0, 0, 0);
+        var Angle=_player.transform.eulerAngles;
+        _player.transform.eulerAngles = new Vector3(0, Angle.y, 0);
     }
 }

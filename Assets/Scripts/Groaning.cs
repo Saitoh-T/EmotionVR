@@ -30,17 +30,21 @@ public class Groaning : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         _Groaning3.Play();
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         _HorrorFace.SetActive(true);
         yield return new WaitForSeconds(0.15f);
         _HorrorFace.SetActive(false);
+
         yield return new WaitForSeconds(0.5f);
+        
         _HorrorFace.SetActive(true);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.05f);
         _HorrorFace.SetActive(false); 
+        
         yield return new WaitForSeconds(0.2f);
+        
         _HorrorFace.SetActive(true);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.05f);
         _HorrorFace.SetActive(false);
     }
 

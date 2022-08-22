@@ -5,17 +5,26 @@ using UnityEngine;
 public class Sounds : MonoBehaviour
 {
     [SerializeField] AudioSource _Sounds; 
-    [SerializeField] AudioSource _RandomSounds; 
-
+    [SerializeField] AudioSource _RandomSounds;
+    bool _flag = false;
+    bool _flag_R = false;
     public void Sound()
     {
-        _Sounds.Play();
+        if (!_flag)
+        {
+            _Sounds.Play();
+            _flag = true;
+        }
     }
 
     public void RandomSound() 
     {
-        _RandomSounds.pitch=Random.Range(0.5f, 1.5f);
-        _RandomSounds.Play();
+        if (!_flag_R)
+        {
+            _RandomSounds.pitch = Random.Range(0.5f, 1.5f);
+            _RandomSounds.Play();
+            _flag_R = true;
+        }
     }
 
 }

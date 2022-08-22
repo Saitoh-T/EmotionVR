@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: {x: 0, y: -110, z: 0}
+        value: {x: 0, y: -160, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -112,7 +112,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0.016666668
-        value: -110
+        value: -160
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -199,13 +199,6 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: Sound
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.5
-    functionName: RandomSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

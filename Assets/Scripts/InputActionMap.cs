@@ -14,7 +14,11 @@ public class InputActionMap : MonoBehaviour
     bool _runSoundFlag = false;
     bool _walkSoundFlag = false;
     bool _stopFlag = false;
+
     public bool fire = false;
+    public bool item1 = false;
+    public bool item2 = false;
+    public bool item3 = false;
     [SerializeField] private GameObject Light;
     [SerializeField] private GameObject Player;
     

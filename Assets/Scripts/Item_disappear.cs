@@ -29,19 +29,20 @@ public class Item_disappear : MonoBehaviour
             }
             _interactFlag = true;
             player.GetComponent<InputActionMap>().fire = false;
-            
-            if (!_state.item1)
+
+            if (_state.item1 && _state.item2 && !_state.item3)
             {
-                player.GetComponent<InputActionMap>().item1 = true;
+                player.GetComponent<InputActionMap>().item3 = true;
             }
             if (_state.item1 && !_state.item2)
             {
                 player.GetComponent<InputActionMap>().item2 = true;
             }
-            if (_state.item1 && _state.item2 && !_state.item3)
+            if (!_state.item1)
             {
-                player.GetComponent<InputActionMap>().item3 = true;
+                player.GetComponent<InputActionMap>().item1 = true;
             }
-        }
+            
+        }   
     }
 }

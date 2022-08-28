@@ -30,6 +30,10 @@ public class Item_disappear : MonoBehaviour
             _interactFlag = true;
             player.GetComponent<InputActionMap>().fire = false;
 
+            if (_state.item1 && _state.item2 && _state.item3 && !_state.item4)
+            {
+                player.GetComponent<InputActionMap>().item4 = true;
+            }
             if (_state.item1 && _state.item2 && !_state.item3)
             {
                 player.GetComponent<InputActionMap>().item3 = true;

@@ -23,7 +23,7 @@ public class DoorInteraction : MonoBehaviour
         {
             Rotation();
             _interactFlag = true;
-            player.GetComponent<InputActionMap>().fire = false;
+
         }
     }
 

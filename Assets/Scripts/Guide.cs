@@ -30,7 +30,11 @@ public class Guide : MonoBehaviour
 	{
 		_state = player.GetComponent<InputActionMap>();
 
-		if (_state.item1 && _state.item2 && _state.item3)
+		if (_state.item1 && _state.item2 && _state.item3 && _state.item4)
+		{
+			agent.SetDestination(targets[4].position);
+		}
+		if (_state.item1 && _state.item2 && _state.item3 && !_state.item4)
 		{
 			agent.SetDestination(targets[3].position);
 		}

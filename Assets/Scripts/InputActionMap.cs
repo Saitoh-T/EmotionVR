@@ -19,9 +19,9 @@ public class InputActionMap : MonoBehaviour
     public bool item1 = false;
     public bool item2 = false;
     public bool item3 = false;
-    public bool item4 = false;
     [SerializeField] private GameObject Light;
-    [SerializeField] private GameObject Player;
+//    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject Guide;
     
     private void OnLeftAction(InputValue arg)
     {
@@ -107,5 +107,10 @@ public class InputActionMap : MonoBehaviour
         fire = true;
         yield return new WaitForSeconds(1.0f);
         fire = false;
+    }
+
+    public void Next() 
+    {
+        Guide.GetComponent<Guide>().next = true;
     }
 }

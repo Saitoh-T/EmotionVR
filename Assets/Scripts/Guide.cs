@@ -12,15 +12,16 @@ public class Guide : MonoBehaviour
 
 	[SerializeField]
 	UnityEngine.AI.NavMeshAgent agent;
-	
-	[SerializeField]
+
+	[SerializeField] 
 	GameObject player;
-	
-	private InputActionMap _state;
+
+	public Transform target;
+	public bool next;
+	private int i = 0;
 
 	void Start()
 	{
-		_state = player.GetComponent<InputActionMap>();
 		agent.SetDestination(targets[0].position);
 		agent.updateRotation = false;
 		agent.updatePosition = false;
@@ -28,28 +29,17 @@ public class Guide : MonoBehaviour
 
 	void Update()
 	{
-		_state = player.GetComponent<InputActionMap>();
-
-		if (_state.item1 && _state.item2 && _state.item3 && _state.item4)
+		if (!(targets[i] == null))
 		{
-			agent.SetDestination(targets[4].position);
+			target = targets[i];
 		}
-		if (_state.item1 && _state.item2 && _state.item3 && !_state.item4)
+		if (next) 
 		{
-			agent.SetDestination(targets[3].position);
+			i++;
+			next = false;
 		}
-		if (_state.item1 && _state.item2 && !_state.item3)
-		{
-			agent.SetDestination(targets[2].position);
-		}
-		if (_state.item1 && !_state.item2)
-		{
-			agent.SetDestination(targets[1].position);
-		}
-		if (!_state.item1)
-		{
-			agent.SetDestination(targets[0].position);
-		}
+		
+		agent.SetDestination(target.position);
 		cursor.rotation = Quaternion.LookRotation(agent.steeringTarget - transform.position, Vector3.right);
 		agent.nextPosition = transform.position;
 	}

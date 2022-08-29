@@ -19,7 +19,7 @@ public class LockedDoorInteraction : MonoBehaviour
 
     public void Interaction() 
     {
-        if (_state.fire && !_interactFlag && _state.item3 && _state.item4) 
+        if (_state.fire && !_interactFlag && _state.item3) 
         {
             Rotation();
             _interactFlag = true;

@@ -6,60 +6,75 @@ using UnityEngine.AI;
 
 public class TestElv : MonoBehaviour
 {
-    private bool EVflag;
+    public bool EVflag;
     public float floar;
     [SerializeField] GameObject Player;
     [SerializeField] GameObject EVButton;
+    [SerializeField] GameObject Fence;
     NavMeshAgent _navAgent;
-    public bool Visible;
+    private bool fire;
+    private bool flag;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         floar = 1f;
         EVflag = false;
+        flag = false;
         _navAgent = Player.GetComponent<NavMeshAgent>();
+        anim = Fence.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Visible = EVButton.GetComponent<Renderer>().isVisible;
-        if (transform.position.y < 11 && floar == 1f && EVflag == true && Visible)
+        if (transform.position.y < 11 && floar == 1f && EVflag == true)
         {
             transform.Translate(0, 0.05f, 0);
 
         }
 
 
-        if (transform.position.y > 0f && floar == 2f && EVflag == true && Visible)
+        else if (transform.position.y > 0f && floar == 2f && EVflag == true)
         {
             transform.Translate(0, -0.05f, 0);
         }
 
-
-
+        else if(EVflag == true)
+        {
+            anim.SetTrigger("Open");
+            EVflag = false;
+            flag = true;
+        }
 
     }
     private void OnTriggerEnter(Collider other)
     {
-
-        EVflag = true;
         _navAgent.enabled = false;
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        fire = Player.GetComponent<InputActionMap>().fire;
+        if (fire) 
+        {
+            anim.SetTrigger("Fire");
+        }
 
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (floar == 1f && EVflag == true)
+        if (floar == 1f && flag == true )
         {
             floar = 2f;
-            EVflag = false;
+            flag = false;
         }
-        if (floar == 2f && EVflag == true)
+        if (floar == 2f && flag == true )
         {
             floar = 1f;
-            EVflag = false;
+            flag = false;
         }
     }
 }

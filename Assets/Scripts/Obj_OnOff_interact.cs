@@ -7,7 +7,7 @@ public class Obj_OnOff_interact : MonoBehaviour
     [SerializeField] private GameObject[] items_disappear;
     [SerializeField] private GameObject[] items_appear;
     [SerializeField] private GameObject player;
-    private bool _interactFlag = false;
+    public bool _interactFlag = false;
     private InputActionMap _state;
 
     void Start()
@@ -29,6 +29,12 @@ public class Obj_OnOff_interact : MonoBehaviour
             }
             _interactFlag = true;
             player.GetComponent<InputActionMap>().fire = false;
+            _state.Next();
         }
+    }
+
+    public void FlagOff() 
+    {
+        _interactFlag = false;
     }
 }

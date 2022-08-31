@@ -9,6 +9,6 @@ public class EnemyStartMove : MonoBehaviour
     
     public void NavOn()
     {
-        Enemy.GetComponent<NavMeshAgent>().enabled = true;
+        Enemy.GetComponent<EnemyMove>().enabled = true;
     }
 }

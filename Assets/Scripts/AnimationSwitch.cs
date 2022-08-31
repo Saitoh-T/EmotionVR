@@ -4,62 +4,38 @@ using UnityEngine;
 
 public class AnimationSwitch : MonoBehaviour
 {
-    private Animation anim;
-
-    public AnimationClip test_1;
-    public AnimationClip test_2;
-
+    public AnimationClip anim1;
+    public AnimationClip anim2;
     // Use this for initialization
     void Start()
     {
-        anim = GetComponent<Animation>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine("ChangeTest_1");
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            StartCoroutine("ChangeTest_1");
-        }
+        StartCoroutine(ChangeTest_1());
     }
 
     /* ---------- Test_1 Coroutine ------------
-     * Animation‚ğTest_1‚É•ÏX‚µ‚ÄÄ¶‚·‚éƒRƒ‹[ƒ`ƒ“
+     * Animationï¿½ï¿½Test_1ï¿½É•ÏXï¿½ï¿½ï¿½ÄÄï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½[ï¿½`ï¿½ï¿½
      */
     IEnumerator ChangeTest_1()
     {
-        animation.Stop();
+        GetComponent<Animation>().Stop();
 
         yield return null;
 
-        animation.clip = test_1;
-
-        yield return null;
-
-        animation.Play("test_1");
+        GetComponent<Animation>().Play(anim1.name);
 
         yield return null;
     }
 
     /* ---------- Test_2 Coroutine ------------
-     * Animation‚ğTest_2‚É•ÏX‚µ‚ÄÄ¶‚·‚éƒRƒ‹[ƒ`ƒ“
+     * Animationï¿½ï¿½Test_2ï¿½É•ÏXï¿½ï¿½ï¿½ÄÄï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½[ï¿½`ï¿½ï¿½
      */
     IEnumerator ChangeTest_2()
     {
-        animation.Stop();
+        GetComponent<Animation>().Stop();
 
         yield return null;
 
-        animation.clip = test_2;
-
-        yield return null;
-
-        animation.Play("test_2");
+        GetComponent<Animation>().Play(anim2.name);
 
         yield return null;
     }

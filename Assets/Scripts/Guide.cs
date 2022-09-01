@@ -29,11 +29,8 @@ public class Guide : MonoBehaviour
 
 	void Update()
 	{
-		if (!(targets[i] == null))
-		{
-			target = targets[i];
-		}
-		if (next) 
+		target = targets[i];
+		if (next && (i+1 <targets.Length)) 
 		{
 			i++;
 			next = false;

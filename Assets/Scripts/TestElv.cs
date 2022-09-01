@@ -61,7 +61,6 @@ public class TestElv : MonoBehaviour
         {
             anim.SetTrigger("Fire");
         }
-
     }
 
     private void OnTriggerExit(Collider other)

@@ -22,7 +22,7 @@ public class CollisionDetector : MonoBehaviour
     
     private void OnTriggerExit(Collider other) 
     {
-        onTriggerStay.Invoke(other);
+        onTriggerExit.Invoke(other);
     }
 
     [System.Serializable] public class TriggerEvent : UnityEvent<Collider> 

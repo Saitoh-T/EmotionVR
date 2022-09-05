@@ -23,4 +23,9 @@ public class Obj_OnOff : MonoBehaviour
             _interactFlag = true;            
         }   
     }
+
+    public void FlagOff()
+    {
+        _interactFlag = false;
+    }
 }

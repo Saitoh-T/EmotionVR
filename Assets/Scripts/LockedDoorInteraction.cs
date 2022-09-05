@@ -9,6 +9,7 @@ public class LockedDoorInteraction : MonoBehaviour
     [SerializeField] private GameObject player;
     private InputActionMap _state;
     private bool _interactFlag = false;
+    [SerializeField] AudioSource LockSound;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,15 @@ public class LockedDoorInteraction : MonoBehaviour
 
     public void Interaction() 
     {
-        if (_state.fire && !_interactFlag && _state.item3) 
+        if (_state.fire && !_interactFlag && _state.item3)
         {
             Rotation();
             _interactFlag = true;
             player.GetComponent<InputActionMap>().fire = false;
+        }
+        else if(_state.fire)
+        {
+            LockSound.Play();
         }
     }
 

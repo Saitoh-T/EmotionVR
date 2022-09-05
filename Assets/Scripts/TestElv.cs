@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TestElv : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class TestElv : MonoBehaviour
     [SerializeField] GameObject EVButton;
     [SerializeField] GameObject Fence;
     NavMeshAgent _navAgent;
+    ActionBasedContinuousMoveProvider _playerMOVE;
     private bool fire;
     private bool flag;
     private Animator anim;
@@ -24,6 +27,7 @@ public class TestElv : MonoBehaviour
         flag = false;
         _navAgent = Player.GetComponent<NavMeshAgent>();
         anim = Fence.GetComponent<Animator>();
+        _playerMOVE = Player.GetComponent<ActionBasedContinuousMoveProvider>();
     }
 
     // Update is called once per frame
@@ -43,6 +47,7 @@ public class TestElv : MonoBehaviour
 
         else if(EVflag == true)
         {
+            _playerMOVE.enabled = true;
             anim.SetTrigger("Open");
             EVflag = false;
             flag = true;

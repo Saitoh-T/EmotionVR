@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Asset/Fear 1.unity
+    guid: 072e44e1d46000a46936d0552adf72b5
+  - enabled: 1
+    path: Assets/Asset/Fear.unity
+    guid: bc6f02b6e44116c4db1749a398ab080b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 27584e4bfb3e2124ab57c6232d561413, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 183120185da14ea4e8892d06b0837ab3, type: 2}

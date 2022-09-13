@@ -6,6 +6,7 @@ public class EVCollider : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] GameObject EV;
+    [SerializeField] GameObject Stopper;
     [SerializeField] GameObject subscript;
 
     void Start() 
@@ -16,9 +17,11 @@ public class EVCollider : MonoBehaviour
     {
         var state = Player.GetComponent<InputActionMap>();
         var EVCollider = EV.GetComponent<BoxCollider>();
+        var StopCollider = Stopper.GetComponent<BoxCollider>();
         if (state.item1 && state.item2)
         {
             EVCollider.enabled = true;
+            StopCollider.enabled = true;
         }
         else 
         {

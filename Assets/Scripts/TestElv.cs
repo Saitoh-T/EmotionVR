@@ -11,13 +11,16 @@ public class TestElv : MonoBehaviour
     public bool EVflag;
     public float floar;
     [SerializeField] GameObject Player;
-    [SerializeField] GameObject EVButton;
     [SerializeField] GameObject Fence;
+    [SerializeField] GameObject EV;
+    [SerializeField] GameObject Stopper;
     NavMeshAgent _navAgent;
     ActionBasedContinuousMoveProvider _playerMOVE;
     private bool fire;
     private bool flag;
     private Animator anim;
+    private BoxCollider EVCollider;
+    private BoxCollider StopCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,8 @@ public class TestElv : MonoBehaviour
         _navAgent = Player.GetComponent<NavMeshAgent>();
         anim = Fence.GetComponent<Animator>();
         _playerMOVE = Player.GetComponent<ActionBasedContinuousMoveProvider>();
+        EVCollider = EV.GetComponent<BoxCollider>();
+        StopCollider = Stopper.GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -80,5 +85,8 @@ public class TestElv : MonoBehaviour
             floar = 1f;
             flag = false;
         }
+
+        EVCollider.enabled = false;
+        StopCollider.enabled = false;
     }
 }

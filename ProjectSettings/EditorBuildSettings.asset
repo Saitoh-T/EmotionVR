@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Asset/Fear 1.unity
+    path: Assets/Asset/Fear Tutorial.unity
     guid: 072e44e1d46000a46936d0552adf72b5
   - enabled: 1
     path: Assets/Asset/Fear.unity

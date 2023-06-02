@@ -15,8 +15,18 @@ public class BallPlay : MonoBehaviour
     private bool PickUpFlag;
     private bool ReturnFlag;
     private bool RetrackFlag;
-    
+
     // Start is called before the first frame update
+    void OnEnable()
+    {
+        Ball.SetActive(true);
+    }
+    
+    void OnDisable()
+    {
+        Ball.SetActive(false);
+    }
+    
     void Start()
     {
         ball = Ball.GetComponent<XRGrabInteractable>();
@@ -43,12 +53,10 @@ public class BallPlay : MonoBehaviour
                 if (ComparePosition(Player) < 5.0f)
                 {
                     ReturnFlag = Returning(ReturnFlag);
-                    Debug.Log("Return");
                 }
                 else if(ComparePosition(Player) > 6.0f)
                 {
                     RetrackFlag = Retrucking(RetrackFlag);
-                    Debug.Log("Retrack");
                 }
             }
         }
